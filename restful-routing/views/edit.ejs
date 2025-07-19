@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Student</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9fafb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #cbd5e0;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .radio-group {
+      margin-bottom: 20px;
+    }
+
+    button {
+      width: 100%;
+      background-color: #3182ce;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2b6cb0;
+    }
+  </style>
+</head>
+<body>
+
+  <form action="/students/<%= student.id %>?_method=PUT" method="POST">
+    <h2>Edit Student</h2>
+
+    <input name="firstName" type="text" placeholder="First Name" value="<%= student.firstName %>" required />
+    <input name="secondName" type="text" placeholder="Last Name" value="<%= student.secondName %>" required />
+    <input name="age" type="number" placeholder="Age" value="<%= student.age %>" required />
+    <input name="stream" type="text" placeholder="Stream" value="<%= student.stream %>" required />
+    <input name="rank" type="number" placeholder="Rank" value="<%= student.rank %>" required />
+
+    <button type="submit">Save</button>
+  </form>
+
+</body>
+</html>

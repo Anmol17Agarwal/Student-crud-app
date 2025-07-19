@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add New Student</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f5f9;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #2d3748;
+    }
+
+    form {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #4a5568;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #cbd5e0;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: #3182ce;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #2b6cb0;
+    }
+
+    .back-link {
+      margin-top: 20px;
+      display: inline-block;
+      text-decoration: none;
+      color: #3182ce;
+      font-weight: bold;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Add New Student</h2>
+
+  <form action="/students" method="POST">
+    <label for="firstName">First Name:</label>
+    <input type="text" name="firstName" id="firstName" required />
+
+    <label for="secondName">Last Name:</label>
+    <input type="text" name="secondName" id="secondName" required />
+
+    <label for="age">Age:</label>
+    <input type="number" name="age" id="age" required />
+
+    <label for="stream">Stream:</label>
+    <input type="text" name="stream" id="stream" required />
+
+    <label for="rank">Rank:</label>
+    <input type="number" name="rank" id="rank" required />
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <a class="back-link" href="/students">← Back to List</a>
+
+</body>
+</html>

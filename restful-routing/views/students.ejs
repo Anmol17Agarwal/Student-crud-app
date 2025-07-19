@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f5f9;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h3 {
+      color: #2d3748;
+      margin-bottom: 30px;
+    }
+
+    .create-btn {
+      background-color: #38a169;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .create-btn:hover {
+      background-color: #2f855a;
+    }
+
+    .student-card {
+      background-color: white;
+      border: 1px solid #cbd5e0;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 15px auto;
+      width: 80%;
+      max-width: 500px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+    .student-card p {
+      margin: 8px 0;
+      color: #2d3748;
+    }
+
+    .btn-group {
+      margin-top: 15px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      color: white;
+    }
+
+    .edit-btn {
+      background-color: #3182ce;
+    }
+
+    .edit-btn:hover {
+      background-color: #2b6cb0;
+    }
+
+    .delete-btn {
+      background-color: #e53e3e;
+    }
+
+    .delete-btn:hover {
+      background-color: #c53030;
+    }
+  </style>
+</head>
+<body>
+  <h3>List of Student Details</h3>
+
+  <button class="create-btn">  <a href="/students/new">+ Create Student</a></button>
+  
+  <% for (let student of students) { %>
+    <div class="student-card">
+      <p><strong>First Name:</strong> <%= student.firstName %></p>
+      <p><strong>Last Name:</strong> <%= student.secondName %></p>
+      <p><strong>Age:</strong> <%= student.age %></p>
+      <p><strong>Stream:</strong> <%= student.stream %></p>
+      <p><strong>Rank:</strong> <%= student.rank %></p>
+
+      <div class="btn-group">
+        <button class="btn show-btn"><a href="/students/<%= student.id %>">Show</a></button>
+        <button class="btn edit-btn"><a href="/students/<%= student.id %>/edit">Edit</a></button>
+        <form method="POST" action="/students/<%=student.id%>?_method=DELETE">
+            <button class="btn delete-btn">Delete</button>
+        </form>
+      </div>
+    </div>
+  <% } %>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Details</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9fafb;
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    h3 {
+      color: #2d3748;
+      margin-bottom: 20px;
+    }
+
+    .user-card {
+      background-color: #fff;
+      border: 1px solid #e2e8f0;
+      border-left: 6px solid #3182ce;
+      border-radius: 10px;
+      padding: 20px 30px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .user-card p {
+      font-size: 16px;
+      margin: 10px 0;
+      color: #4a5568;
+    }
+
+    .label {
+      font-weight: bold;
+      color: #2d3748;
+    }
+  </style>
+</head>
+<body>
+
+<h3>Student Details</h3>
+
+<div class="user-card">
+  <p><span class="label">First Name:</span> <%= student.firstName %></p>
+  <p><span class="label">Last Name:</span> <%= student.secondName %></p>
+  <p><span class="label">Age:</span> <%= student.age %></p>
+  <p><span class="label">Stream:</span> <%= student.stream %></p>
+  <p><span class="label">Rank:</span> <%= student.rank %></p>
+</div>
+
+
+</body>
+</html>
